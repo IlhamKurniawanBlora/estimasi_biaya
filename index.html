@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>COCOMO II Estimation Form</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Form Input Estimasi Biaya Proyek (COCOMO II)</h1>
+        <form id="cocomoForm">
+            <fieldset>
+                <legend>Informasi Proyek:</legend>
+                <label for="projectName">Nama Proyek:</label>
+                <input type="text" id="projectName" name="projectName"><br>
+
+                <label for="projectDescription">Deskripsi Proyek:</label>
+                <input type="text" id="projectDescription" name="projectDescription"><br>
+
+                <label for="systemType">Jenis Sistem:</label>
+                <input type="text" id="systemType" name="systemType"><br>
+
+                <label for="programmingLanguage">Bahasa Pemrograman:</label>
+                <input type="text" id="programmingLanguage" name="programmingLanguage"><br>
+
+                <label for="platform">Platform:</label>
+                <input type="text" id="platform" name="platform"><br>
+            </fieldset>
+
+            <fieldset>
+                <legend>Ukuran Proyek (Estimasi Kode Sumber):</legend>
+                <label for="kloc">Jumlah Baris Kode (KLOC):</label>
+                <input type="number" id="kloc" name="kloc"><br>
+            </fieldset>
+
+            <fieldset>
+                <legend>Atribut Proyek (Effort Multipliers):</legend>
+                <label for="rely">Reliability Required (RELY):</label>
+                <select id="rely" name="rely">
+                    <option value="1.00">Nominal</option>
+                    <option value="0.75">Very Low</option>
+                    <option value="0.88">Low</option>
+                    <option value="1.15">High</option>
+                    <option value="1.40">Very High</option>
+                    <option value="1.65">Extra High</option>
+                </select><br>
+
+                <label for="data">Database Size (DATA):</label>
+                <select id="data" name="data">
+                    <option value="1.00">Nominal</option>
+                    <option value="0.90">Low</option>
+                    <option value="1.14">High</option>
+                    <option value="1.28">Very High</option>
+                </select><br>
+
+                <label for="cplx">Product Complexity (CPLX):</label>
+                <select id="cplx" name="cplx">
+                    <option value="1.00">Nominal</option>
+                    <option value="0.70">Very Low</option>
+                    <option value="0.85">Low</option>
+                    <option value="1.15">High</option>
+                    <option value="1.30">Very High</option>
+                    <option value="1.65">Extra High</option>
+                </select><br>
+
+                <label for="ruse">Required Reusability (RUSE):</label>
+                <select id="ruse" name="ruse">
+                    <option value="1.00">Nominal</option>
+                    <option value="0.90">Low</option>
+                    <option value="1.15">High</option>
+                    <option value="1.30">Very High</option>
+                    <option value="1.50">Extra High</option>
+                </select><br>
+
+                <label for="docu">Documentation Match to Lifecycle Needs (DOCU):</label>
+                <select id="docu" name="docu">
+                    <option value="1.00">Nominal</option>
+                    <option value="0.85">Very Low</option>
+                    <option value="0.91">Low</option>
+                    <option value="1.11">High</option>
+                    <option value="1.23">Very High</option>
+                </select><br>
+
+                <label for="time">Execution Time Constraint (TIME):</label>
+                <select id="time" name="time">
+                    <option value="1.00">Nominal</option>
+                    <option value="1.11">High</option>
+                    <option value="1.29">Very High</option>
+                    <option value="1.63">Extra High</option>
+                </select><br>
+
+                <label for="stor">Main Storage Constraint (STOR):</label>
+                <select id="stor" name="stor">
+                    <option value="1.00">Nominal</option>
+                    <option value="1.05">High</option>
+                    <option value="1.17">Very High</option>
+                    <option value="1.46">Extra High</option>
+                </select><br>
+
+                <label for="pvol">Platform Volatility (PVOL):</label>
+                <select id="pvol" name="pvol">
+                    <option value="1.00">Nominal</option>
+                    <option value="0.87">Low</option>
+                    <option value="1.00">Nominal</option>
+                    <option value="1.15">High</option>
+                    <option value="1.30">Very High</option>
+                </select><br>
+            </fieldset>
+
+            <fieldset>
+                <legend>Atribut Tim (Cost Drivers):</legend>
+                <label for="acap">Analyst Capability (ACAP):</label>
+                <select id="acap" name="acap">
+                    <option value="1.00">Nominal</option>
+                    <option value="1.46">Very Low</option>
+                    <option value="1.19">Low</option>
+                    <option value="0.86">High</option>
+                    <option value="0.71">Very High</option>
+                </select><br>
+
+                <label for="pcap">Programmer Capability (PCAP):</label>
+                <select id="pcap" name="pcap">
+                    <option value="1.00">Nominal</option>
+                    <option value="1.42">Very Low</option>
+                    <option value="1.17">Low</option>
+                    <option value="0.86">High</option>
+                    <option value="0.70">Very High</option>
+                </select><br>
+
+                <label for="aexp">Application Experience (AEXP):</label>
+                <select id="aexp" name="aexp">
+                    <option value="1.00">Nominal</option>
+                    <option value="1.29">Very Low</option>
+                    <option value="1.13">Low</option>
+                    <option value="0.91">High</option>
+                    <option value="0.82">Very High</option>
+                </select><br>
+
+                <label for="pexp">Platform Experience (PEXP):</label>
+                <select id="pexp" name="pexp">
+                    <option value="1.00">Nominal</option>
+                    <option value="1.19">Very Low</option>
+                    <option value="1.09">Low</option>
+                    <option value="0.91">High</option>
+                    <option value="0.85">Very High</option>
+                </select><br>
+
+                <label for="ltex">Language and Tool Experience (LTEX):</label>
+                <select id="ltex" name="ltex">
+                    <option value="1.00">Nominal</option>
+                    <option value="1.20">Very Low</option>
+                    <option value="1.09">Low</option>
+                    <option value="0.91">High</option>
+                    <option value="0.84">Very High</option>
+                </select><br>
+
+                <label for="pcon">Personnel Continuity (PCON):</label>
+                <select id="pcon" name="pcon">
+                    <option value="1.00">Nominal</option>
+                    <option value="1.34">Very Low</option>
+                    <option value="1.22">Low</option>
+                    <option value="0.83">High</option>
+                    <option value="0.63">Very High</option>
+                </select><br>
+            </fieldset>
+
+            <fieldset>
+                <legend>Atribut Proyek (Cost Drivers):</legend>
+                <label for="tool">Use of Software Tools (TOOL):</label>
+                <select id="tool" name="tool">
+                    <option value="1.00">Nominal</option>
+                    <option value="1.17">Very Low</option>
+                    <option value="1.09">Low</option>
+                    <option value="0.90">High</option>
+                    <option value="0.78">Very High</option>
+                </select><br>
+
+                <label for="site">Multisite Development (SITE):</label>
+                <select id="site" name="site">
+                    <option value="1.00">Nominal</option>
+                    <option value="1.22">Very Low</option>
+                    <option value="1.09">Low</option>
+                    <option value="0.93">High</option>
+                    <option value="0.86">Very High</option>
+                </select><br>
+
+                <label for="sced">Required Development Schedule (SCED):</label>
+                <select id="sced" name="sced">
+                    <option value="1.00">Nominal</option>
+                    <option value="1.43">Very Low</option>
+                    <option value="1.14">Low</option>
+                    <option value="1.00">High</option>
+                    <option value="0.95">Very High</option>
+                </select><br>
+            </fieldset>
+
+            <fieldset>
+                <legend>Estimasi Biaya:</legend>
+                <label for="effortEstimation">Effort Estimation (Person-Months):</label>
+                <input type="number" id="effortEstimation" name="effortEstimation" readonly><br>
+
+                <label for="duration">Duration (Months):</label>
+                <input type="number" id="duration" name="duration" readonly><br>
+
+                <label for="cost">Cost (Currency):</label>
+                <input type="number" id="cost" name="cost" readonly><br>
+            </fieldset>
+
+            <button type="button" onclick="calculateCOCOMO()">Calculate</button>
+        </form>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
